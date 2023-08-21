@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;500&family=PT+Sans:wght@400;700&family=Roboto:wght@100;300;400&display=swap');
+@import 'variable';
+@font-face {
+    font-family: 'Cambria';
+    src: url(font_family/Cambria-Font-For-Windows.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+        color: $gray-500;
+        height: 316px;
+        .top{
+            .name{
+                margin-top: 36px;
+                span{
+                    font-family: $font-family-BebasNeue;
+                    font-size: 40px;
+                }
+                p{
+                    font-family: $font-family-Arial;
+                    line-height: 1px;
+                }
+            }
+            .menu{
+                font-family: $font-family-Helvetica;
+                font-weight: 100;
+                ul{   
+                    margin:auto;
+                    display: flex;
+                    li{
+                        padding-bottom: 5px;
+                        list-style-type: none;
+                        a{
+                            padding: 10px;
+                            color: $gray-500;
+                            text-decoration: none;
+                        }
+                        a:hover{
+                            color: $white-500;
+                        }
+                    }
+                    li:hover{
+                        background-color: $red-300; 
+                    }
+                }
+            }
+        }
+    .text{
+        border-bottom: 1px solid;
+        border-image: linear-gradient(to right, $white-400, $gray-300, $white-400);
+        border-image-slice: 1;
+        background-color: $white-500;
+        height: 152px;
+        margin-top: 74px;
+        text-align: center;
+        span{
+            font-size: 60px;
+            color: $white-300;
+        }
+        p{
+            font-size: 23px;
+        }
+    }
+}
+
+.pencil{
+        position: relative;
+        z-index: -1; /* Đảm bảo phần tử đè lên nằm trên ảnh nền */
+        text-align: center;
+        .two{
+            position: relative;
+            left: -10px;
+            top: -15px;
+        }
+}
+
+.section{
+        p{
+            color: $gray-500;
+            font-size: 25px;
+        }
+ }
+
+.footer{
+        background-color: $red-300;
+        color: $white-500;
+        .Lorem{
+            .image{
+                .image_india{
+                    border: 8px solid $white-500;
+                    position: relative;
+                    top: -55px;
+                }
+                .address{
+                    margin-left: 28px;
+                    margin-top: 23px;
+                    span{
+                        i{
+                            font-size: 25px;
+                        }
+                    }
+                    a{
+                        color: $white-500;
+                        font-family: $font-family-PTSans;
+                        font-size: 12px;
+                        text-decoration: none;
+                        margin-left: 8px;
+                        line-height: 30px;
+                    }
+                    i{
+                        font-size: 13px;
+                    }
+                }
+                .logo{
+                    display: flex;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+            .text{
+                font-family: $font-family-PTSans;
+                font-size: 12px;
+                line-height: 19px;
+            }
+        }
+        .Myskills{
+            p{
+                font-size: 25px;
+            }
+            ul{
+                margin-top: 20px;
+                li{
+                    font-family: $font-family-PTSans;
+                    list-style-type: none;
+                    p{
+                        position: relative;
+                        background-color: $red-200;
+                    }
+                }
+            }
+        }
+}
+
+//mobile 39.375em
+@media only screen and (max-width: 39.375em) {
+    .wapper{
+    width: 630px;
+    margin: auto;
+    }
+
+    .hr_top{
+        position: relative;
+        top: 120px;
+        background-color: $gray-300;
+    }
+    .header{
+        .top{
+            margin-left: 35px;
+            .menu{
+                font-size: 20px;
+                ul{  
+                    margin-top: 39px; 
+                    li{
+                        margin-right: 47px;
+                        padding-top: 5px;
+                    }
+                }
+            }
+        }
+        .text{
+            margin-top: 94px;
+        }
+    }
+
+    .pencil{
+        top: 20px;
+    }
+
+    .section{
+        p{
+            margin: 78px 0 12px 68px;
+        }
+        .row{
+            margin-left: 34px;
+            img{
+                margin: 26px 34px;
+            }
+            .row_two_two,
+            .row_three{
+                display: none;
+            }
+        }
+    }
+
+    .hr_bottom{
+        position: relative;
+        top: 450px;
+        background: $white-500;
+    }
+
+    .footer{
+        height: 690px;
+        margin-top: 102px;
+        padding-left: 62px;
+        .Lorem{
+            .image{
+                .img_address{
+                    display: flex;
+                }
+                .logo{
+                    position: relative;
+                    top: 130px;
+                    div{
+                        display: flex;
+                        align-items: center;
+                        margin-right: 74px;
+                        img{
+                        margin-right: 15px;
+                    }
+                    }
+                }
+            }
+            .text{
+                width: 535px;
+                margin-top: -80px;
+            }
+        }
+        .Myskills{
+            margin-top: 170px;
+            margin-left: 17px;
+            ul{
+                li{
+                    font-size: 25px;
+                    line-height: 20px;
+                    p{
+                        width: 322px;
+                        height: 17px;
+                        left: 35px;
+                        top: -17px;
+                    }
+                }
+            }
+        }
+    }
+    .end{
+        display: none;
+    }
+}
+
+//PC 80em
+@media only screen and (min-width: 39.375em) {
+    .wapper{
+    width: 1280px;
+    margin: auto;
+    }
+    hr{
+        display: none;
+    }
+    .header{
+        .top{
+            display: flex;
+            margin-left: 150px;
+            .menu{
+                font-size: 15px;
+                width: 349px;
+                margin-left: 495px;
+                ul{   
+                    li{
+                        padding-top: 58px;
+                    }
+                }
+            }
+        }
+        .text{
+            margin-top: 85px;
+        }
+    }
+
+    .pencil{
+        top: -30px;
+    }
+
+    .section{
+        p{
+            margin-left: 184px;
+            margin-bottom: 22px;
+        }
+        .row{
+            display: flex;
+            margin-left: 168px;
+            img{
+                margin: 16px;
+            }
+        }
+    }
+
+    .footer{
+        margin-top: 102px;
+        padding-left: 184px;
+        height: 262px;
+        display: flex;
+        .Lorem{
+            .image{
+                display: flex;
+                .img_address{
+                    display: flex;
+                }
+                .logo{
+                    margin-left: 190px;
+                    margin-top: 29px;
+                    p{
+                        display: none;
+                    }
+                    img{
+                        margin-right: 29px;
+                    }
+
+                }
+            }
+            .text{
+                width: 586px;
+                margin-top: -30px;
+            }
+        }
+        .Myskills{
+            margin-top: 62px;
+            margin-left: 77px;
+            ul{
+                li{
+                    font-size: 19px;
+                    line-height: 17px;
+                    p{
+                        width: 198px;
+                        height: 10px;
+                        left: 30px;
+                        top: -15px;
+                    }
+                }
+            }
+        }
+
+    }
+    
+    .end{
+        background-color: $black-400;
+        font-family: $font-family-PTSans;
+        font-size: 12px;
+        color: $gray-400;
+        height: 39px;
+        p{
+            float: right;
+            margin-right: 147px;
+            margin-top: 10px;
+        }
+}
+}
