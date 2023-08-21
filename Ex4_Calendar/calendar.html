@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ed85f3d89b.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./calendar.css" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div class="wapper">
+      <header>
+        <h2 class="year"></h2>
+        <div class="icons">
+          <i id="left" class="fa-solid fa-chevron-left fa-xl"></i>
+          <i id="right" class="fa-solid fa-chevron-right fa-xl"></i>
+        </div>
+      </header>
+      <div class="calendar">
+        <ul class="weekdays">
+          <li><strong>Su</strong></li>
+          <li><strong>Mo</strong></li>
+          <li><strong>Tu</strong></li>
+          <li><strong>We</strong></li>
+          <li><strong>Th</strong></li>
+          <li><strong>Fr</strong></li>
+          <li><strong>Sa</strong></li>
+        </ul>
+        <ul class="days"></ul>
+      </div>
+    </div>
+    <script>
+      const data = document.querySelector(".year");
+      daysMonth = document.querySelector(".days");
+      nextIcon = document.querySelectorAll(".icons i");
+
+      let d = new Date();
+      year = d.getFullYear();
+      month = d.getMonth();
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
+      const caLendar = () => {
+        let firstDate = new Date(year, month, 1).getDay();
+        dateOfMonths = new Date(year, month + 1, 0).getDate();
+        dayOfMonths = new Date(year, month, dateOfMonths).getDay();
+        lastDateOfMonths = new Date(year, month, 0).getDate();
+        let tagDay = " ";
+
+        for (let i = firstDate; i > 0; i--) {
+          tagDay += `<li class="inactive">${lastDateOfMonths - i + 1}</li>`;
+        }
+
+        for (let i = 1; i <= dateOfMonths; i++) {
+          let isToday =
+            i === d.getDate() &&
+            month === new Date().getMonth() &&
+            year === new Date().getFullYear()
+              ? "active"
+              : "";
+          tagDay += `<li class="${isToday}">${i}</li>`;
+        }
+
+        for (let i = dayOfMonths; i < 6; i++) {
+          tagDay += `<li class="inactive">${i - dayOfMonths + 1}</li>`;
+        }
+        data.innerText = `${months[month]} ${year}`;
+        daysMonth.innerHTML = tagDay;
+      };
+      caLendar();
+
+      nextIcon.forEach((icon) => {
+        icon.addEventListener("click", () => {
+          month = icon.id === "left" ? month - 1 : month + 1;
+
+          if (month < 0 || month > 11) {
+            d = new Date(year, month);
+            year = d.getFullYear();
+            month = d.getMonth();
+          } else {
+            d = new Date();
+          }
+          caLendar();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    background-color: #b2b2b2;
+}
+
+@font-face{
+    font-family: simplecode;
+    src: url(./digital-7.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wapper{
+    width: 331px;
+    height: 350px;
+    background: linear-gradient(to bottom, #f8f8f8, #b6b6b6);
+    margin: auto;
+    margin-top: 50px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.screen{
+    background: linear-gradient(to bottom, #ffe955,#ffc614);
+    font-size: 35px;
+    text-align: right;
+    border: 1px solid #ffffff;
+    margin: 10px 8px 21px 8px ;
+    padding: 10px ;
+    overflow: auto;
+    box-shadow: 1px 1px 5px #33333386 inset;
+    border-radius: 8px;  
+    font-family: simplecode; 
+}
+
+.button_row{
+    margin: 7.5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#button{
+    width: 74px;
+    height: 35px;
+    border: 1px solid #b2b2b2;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+    border-style: outset;
+    
+}
+
+#button:active{
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
+}
+
+#Zero{
+    width: 151px;
+    height: 35px;
+    border: 1px solid #b2b2b2;
+    border-style: outset;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+}
+
+#Zero:active{
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
+}
+
+#bang{
+    width: 74px;
+    height: 76px;
+    border: 1px solid #b2b2b2;
+    border-style: outset;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+}
+
+#bang:active{
+    box-shadow: 0 1px #666;
+    transform: translateY(2px);
+}

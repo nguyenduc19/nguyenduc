@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #aed3e2;
+    font-family: 'Open Sans', sans-serif;
+    /* background: rgba(255, 255, 255, 0.1); */
+}
+
+.wapper{
+    width: 450px;
+    height: 525px;
+    margin-top: 100px;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wapper header{
+    background: #da2128;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.year{
+    width: 430px;
+    height: 60px;
+    margin: auto;
+    margin-top: 5px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.icons{
+    display: flex; 
+    justify-content: space-around;
+    position: relative;
+    color: #ffffff;
+    margin: 0 -150px;
+    top: -28px;
+}
+
+.wapper header i:hover{
+    color: #ffffff8a;
+}
+
+
+/* .wapper hr{
+    border: 0.5px solid rgba(0, 255, 255, 0.274);
+} */
+
+.calendar{
+    margin: auto;
+    margin-top: 10px;
+    padding: 11px;
+}
+
+.calendar ul{
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendar ul li{
+    position: relative;
+    font-size: 24px;
+    width: calc(100% /7);
+    color: #000000;
+}
+
+.calendar .days{
+    margin-top: 25px;
+}
+
+.calendar .days li{
+    width: 53px;
+    height: 53px;
+    /* position: relative;
+    width: calc(100% /7); */
+    background: #e1e1e1;
+    border: 0.5px solid #cccccc;
+    z-index: 1;
+    margin: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.days li::before{
+    width: 53px;
+    height: 53px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    content: "";
+}
+
+.days li.active{
+    color: #ffffff;
+}
+
+.days li:hover::before{
+    background: #da212783;
+    /* background: rgba(0, 255, 255, 0.568); */
+    /* border: 2px solid #ffffff15;
+    box-shadow: 0 4px 8px 0 rgba(236, 231, 231, 0.178), 0 6px 20px 0 rgba(236, 231, 231, 0.178); */
+}
+
+.days li:hover{
+    color: #ffffff;
+}
+
+.days li.active::before{
+    background: #da2128;
+    border: 0.5px solid #cccccc;
+}
+
+.days li.inactive{
+    color: #aaaaaaa8;
+}
